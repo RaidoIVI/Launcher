@@ -1,6 +1,6 @@
 ﻿namespace Launcher
 {
-    public class Class1
+    public interface IIOStream
     {
 
     }
