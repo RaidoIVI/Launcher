@@ -2,11 +2,9 @@
 {
     internal static class IO
     {
-        static ushort outStream;
-
-        internal static void SetOuput(int value)
+        static IO()
         {
-
+            Init();
         }
 
         internal static string Get(string Description)
@@ -25,6 +23,29 @@
         internal static void SendLine(string value = "")
         {
             Console.WriteLine(value);
+        }
+
+        private static void Init()
+        {
+            var config = new FileInfo("Laucher.cfg");
+            if (!config.Exists)
+            {
+                Default();
+            }
+            else
+            {
+                LoadConfig(config);
+            }
+        }
+
+        private static void LoadConfig(FileInfo config)
+        {
+            throw new NotImplementedException();
+        }
+
+        private static void Default()
+        {
+            throw new NotImplementedException();
         }
     }
 }
